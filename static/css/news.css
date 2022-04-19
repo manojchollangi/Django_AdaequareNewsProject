@@ -1,5 +1,5 @@
 .center{
-  background-color: black;
+  background-color: green;
   text-align: center;
 }
 
@@ -15,4 +15,9 @@ img {
   padding: 5px;
   width: 400px;
   height: 340px;
+}
+hr{
+       height: 1px;
+       background-color: #ccc;
+       border: none;
 }

@@ -1,0 +1,33 @@
+{% extends "testapp/base.html" %}
+
+{% block content %}
+<form method="POST" class="post-form" action="update/{{ news.slno }}">
+    {% csrf_token %}
+    <div class="container mt-3"><br>
+    <h3>Update Details</h3>
+    <table class="table-sm" align="center">
+      <tr>
+        <td>
+          <label class="">Category slno:</label>
+          <input type="text" name="slno" id="id_slno" value="{{ news.slno }}"/><br>
+
+          <label class="">Category:</label>
+          <input type="text" name="news_type" id="id_news_type" required maxlength="50" value="{{ news.news_type }}"/><br>
+
+          <label class="">Category Display:</label>
+          <input type="text" name="new_type_display" id="id_new_type_display" required maxlength="100" value="{{ news.new_type_display }}" /><br>
+
+          <label class="">Category Start Date:</label>
+          <input type="date" name="record_start_date"  min="2022-04-18" max="2032-02-20" value="{{ news.record_start_date|date:'Y-m-d' }}"/><br>
+
+          <label class="">Category End Date:</label>
+          <input type="date" name="record_end_date" min="2022-04-18" max="2032-02-20" value="{{ news.record_end_date|date:'Y-m-d' }}" /><br>
+        </td>
+      </tr>
+    </table>
+    <label class=""></label>
+    <button type="submit" class="btn btn-success">Update</button>
+  </div>
+</form>
+
+{% endblock content %}

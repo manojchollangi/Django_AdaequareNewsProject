@@ -13,11 +13,10 @@
     function buildhtml(news){
       htmlblock = ""
       for (var i=0; i<news.length; i++){
-        htmlblock += "<tr><td><b><h2 style='color:black' class='display-6'>"+news[i].news_header+
+        htmlblock += "<tr><td><b><h2 style='color:yellow' class='display-6'>"+news[i].news_header+
         "</h2></b><table><tr>"
         if (news[i].news_images_urls != null){
-          htmlblock += "<td><img src="+news[i].news_images_urls+
-          "/></td>"
+          htmlblock += "<td><img src="+news[i].news_images_urls+"/></td>"
         }
         htmlblock += "<td style='color:white'>"+news[i].news_data+"</td></tr></table></td></tr>"
       }
@@ -37,15 +36,15 @@
         }
       })
     }
-    </script>
-    <div class='center' style="color:black">
+  </script>
+    <div class='center' style="color:green">
       <br>
       <h1 class="display-4" style="color:white"><b>WELCOME TO ADAEQUARE NEWS PORTAL</b></h1>
       <p class="lead" style="color:white">CONTINUOUS NEWS UPDATE FOR EVERY MINUTE</p>
-      <hr class="my-3">
+      <hr class="my-3" style="color:purple">
       {% if news_list %}
        {% for news in news_list %}
-        <a class="btn btn-dark btn-lg" href='#' role="button" id="createbutton" onclick=getnews('{{news.news_type}}')><b>{{news.new_type_display}}</b></a>&nbsp;&nbsp;
+        <a class="btn btn-danger btn-lg" href='#' role="button" id="createbutton" onclick=getnews('{{news.news_type}}')><b>{{news.new_type_display}}</b></a>&nbsp;&nbsp;
        {% endfor %}
       {% else %}
         <p>No records found!!!!!!!!!!!</p>

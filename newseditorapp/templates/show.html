@@ -1,0 +1,33 @@
+{% extends "testapp/base.html" %}
+
+{% block content %}
+<a href="newscategory/news" class='btn btn-primary'>Add News Record</a><br>
+<table class="table table-dark table-striped">
+    <thead>
+        <tr>
+          <th>slno</th>
+          <th>Category</th>
+          <th>Category Description</th>
+          <th>Category Start Date</th>
+          <th>Category End Date</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+    <tbody>
+      {% for news in news_list %}
+        <tr>
+          <td>{{ news.slno }}</td>
+          <td>{{ news.news_type }}</td>
+          <td>{{ news.new_type_display }}</td>
+          <td>{{ news.record_start_date|date:"Y/m/d" }}</td>
+          <td>{{ news.record_end_date|date:"Y/m/d" }}</td>
+          <td><a href="newscategory/edit/{{ news.slno }}"><span class="glyphicon glyphicon-pencil">Edit</span></a></td>
+        </tr>
+        {% empty %}
+        <tr>
+          <td colspan="6" class="text-center bg-warning">No News</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock content %}
